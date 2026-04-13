@@ -1,0 +1,147 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "1766096359edd2865f": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_2fe975b_ia6zUe": {
+          "type": "ai_gen_block_2fe975b",
+          "settings": {
+            "message": "Sikker betaling med MobilePay og Dankort",
+            "show_icon": true,
+            "background_color": "#f3f3f3",
+            "text_color": "#121212",
+            "icon_color": "#121212",
+            "text_alignment": "center",
+            "max_width": 800,
+            "padding_vertical": 12,
+            "padding_horizontal": 20,
+            "spacing": 8,
+            "text_size": 14,
+            "icon_size": 20,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_2fe975b_ia6zUe"
+      ],
+      "settings": {}
+    },
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-1",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "top-center",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "announcement_bar_H8C9J8": {
+      "type": "announcement-bar",
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "blocks_HLNm3C": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f709e10_KGgaiX": {
+          "type": "ai_gen_block_f709e10",
+          "settings": {
+            "main_heading": "Hvorfor Nord Peak?",
+            "main_heading_size": 24,
+            "main_heading_color": "#121212",
+            "main_heading_alignment": "center",
+            "main_heading_spacing": 16,
+            "columns_desktop": 3,
+            "columns_mobile": "1",
+            "desktop_width_percent": 100,
+            "column_gap": 0,
+            "section_padding": 24,
+            "column_padding": 12,
+            "column_background": "#ffffff",
+            "border_radius": 0,
+            "text_alignment": "left",
+            "content_gap": 8,
+            "heading_size": 20,
+            "heading_color": "#121212",
+            "text_size": 14,
+            "text_color": "#121212",
+            "button_alignment": "center",
+            "button_background": "#121212",
+            "button_hover_background": "#000000",
+            "button_text_color": "#ffffff",
+            "button_border_radius": 0,
+            "column_1_heading": "Testet i træning",
+            "column_1_text": "<p>Udviklet gennem tusindvis af træningstimer i calisthenics, styrke og mobilitet – ikke trends.</p>",
+            "column_1_button_text": "",
+            "column_1_button_link": "",
+            "column_2_heading": "Funktionelt design",
+            "column_2_text": "<p>Minimalistisk udstyr uden unødvendige detaljer. Kun funktion, komfort og holdbarhed.</p>",
+            "column_2_button_text": "",
+            "column_2_button_link": "",
+            "column_3_heading": "Ingen bullshit",
+            "column_3_text": "<p>Kun produkter vi selv bruger i vores egen træning. Testet i virkeligheden – ikke kun i et designstudie.</p>",
+            "column_3_button_text": "",
+            "column_3_button_link": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f709e10_KGgaiX"
+      ],
+      "disabled": true,
+      "name": "Columns",
+      "settings": {}
+    }
+  },
+  "order": [
+    "1766096359edd2865f",
+    "announcement-bar",
+    "header",
+    "announcement_bar_H8C9J8",
+    "blocks_HLNm3C"
+  ]
+}

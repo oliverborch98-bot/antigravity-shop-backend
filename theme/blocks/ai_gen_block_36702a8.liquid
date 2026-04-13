@@ -1,0 +1,259 @@
+{% doc %}
+  @prompt
+    Create a clean, minimal footer section for a Danish webshop.
+    
+    The section must clearly display company information in a professional and compliant way.
+    
+    Include the following details:
+    
+    Company name: Nordpeak
+    CVR number: 44928183
+    Country: Denmark
+    
+    The design should be simple, trustworthy, and easy to find, using small but readable text.
+    
+    Place the CVR number clearly visible in the footer together with company name.
+    
+    The style should match a modern fitness / performance brand: minimal, clean, no clutter.
+    
+    Do not add unnecessary text, icons, or marketing language.
+    
+    The purpose of this section is legal transparency and trust.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-company-footer-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.padding_top }}px 20px {{ block.settings.padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+    border-top: 1px solid {{ block.settings.border_color }};
+  }
+
+  .ai-company-footer__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_width }}px;
+    margin: 0 auto;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-company-footer__content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.spacing }}px;
+  }
+
+  .ai-company-footer__company-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.company_name_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-company-footer__info-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .ai-company-footer__cvr-{{ ai_gen_id }},
+  .ai-company-footer__country-{{ ai_gen_id }} {
+    font-size: {{ block.settings.info_text_size }}px;
+    color: {{ block.settings.secondary_text_color }};
+    margin: 0;
+    font-weight: 400;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-company-footer-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_top | times: 0.7 }}px 16px {{ block.settings.padding_bottom | times: 0.7 }}px;
+    }
+
+    .ai-company-footer__company-name-{{ ai_gen_id }} {
+      font-size: {{ block.settings.company_name_size | times: 0.9 }}px;
+    }
+
+    .ai-company-footer__cvr-{{ ai_gen_id }},
+    .ai-company-footer__country-{{ ai_gen_id }} {
+      font-size: {{ block.settings.info_text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-company-footer-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-company-footer__container-{{ ai_gen_id }}">
+    <div class="ai-company-footer__content-{{ ai_gen_id }}">
+      {% if block.settings.company_name != blank %}
+        <p class="ai-company-footer__company-name-{{ ai_gen_id }}">
+          {{ block.settings.company_name }}
+        </p>
+      {% endif %}
+
+      <div class="ai-company-footer__info-{{ ai_gen_id }}">
+        {% if block.settings.cvr_number != blank %}
+          <p class="ai-company-footer__cvr-{{ ai_gen_id }}">
+            CVR: {{ block.settings.cvr_number }}
+          </p>
+        {% endif %}
+
+        {% if block.settings.country != blank %}
+          <p class="ai-company-footer__country-{{ ai_gen_id }}">
+            {{ block.settings.country }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Company info footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Company information"
+    },
+    {
+      "type": "text",
+      "id": "company_name",
+      "label": "Company name",
+      "default": "Nordpeak"
+    },
+    {
+      "type": "text",
+      "id": "cvr_number",
+      "label": "CVR number",
+      "default": "44928183"
+    },
+    {
+      "type": "text",
+      "id": "country",
+      "label": "Country",
+      "default": "Denmark"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 600,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "label": "Container width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "min": 4,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Spacing between elements",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "company_name_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Company name size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "info_text_size",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Info text size",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Company name",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "secondary_text_color",
+      "label": "Info text",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border",
+      "default": "#e5e5e5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Company info footer"
+    }
+  ]
+}
+{% endschema %}
